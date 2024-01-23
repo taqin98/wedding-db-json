@@ -4,7 +4,7 @@ const jsonServer = require('json-server');
 const path = require('path');
 
 const app = express();
-const PORT = process.env.PORT || 3001;
+const PORT = process.env.PORT || 3000;
 
 // Serve the JSON data
 app.use('/api', jsonServer.router(path.join(__dirname, 'db.json')));
