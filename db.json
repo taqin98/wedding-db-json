@@ -1,0 +1,11 @@
+{
+    "posts": [
+      { "id": 1, "title": "Hello, JSON Server!" },
+      { "id": 2, "title": "JSON Server is awesome!" }
+    ],
+    "comments": [
+      { "id": 1, "body": "Great post!", "postId": 1 },
+      { "id": 2, "body": "I agree!", "postId": 1 }
+    ]
+  }
+  
