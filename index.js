@@ -20,7 +20,7 @@ app.get('/users', (req, res) => {
 });
 
 // Serve static files (optional)
-// app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.static(path.join(__dirname, 'public')));
 
 // Start the server
 app.listen(PORT, () => {
