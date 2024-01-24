@@ -35,6 +35,7 @@ app.get('/comments', async (req, res) => {
     const comments = jsonData.comments;
     res.json(comments);
   } catch (error) {
+    console.error('Error in /posts route:', error);
     res.status(500).json({ error: 'Internal Server Error' });
   }
 });
@@ -45,18 +46,19 @@ app.get('/posts/:id', async (req, res) => {
   if (isNaN(postId)) {
     return res.status(400).json({ error: 'Invalid post ID' });
   }
-
+  
   try {
     const data = await fs.readFile(dataFilePath, 'utf-8');
     const jsonData = JSON.parse(data);
     const post = jsonData.posts.find((p) => p.id === postId);
-
+    
     if (!post) {
       return res.status(404).json({ error: 'Post not found' });
     }
-
+    
     res.json(post);
   } catch (error) {
+    console.error('Error in /posts/:id route:', error);
     res.status(500).json({ error: 'Internal Server Error' });
   }
 });
