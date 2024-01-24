@@ -1,8 +1,8 @@
 // Import packages
 const express = require("express");
 const home = require("./routes/home");
-// const jsonServer = require('json-server');
-// const jsonServerMiddleware = jsonServer.router('db.json');
+const jsonServer = require('json-server');
+const jsonServerMiddleware = jsonServer.router('db.json');
 
 // Middlewares
 const app = express();
